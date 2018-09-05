@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_05_153250) do
+ActiveRecord::Schema.define(version: 2018_09_05_165656) do
 
   create_table "aspirations", force: :cascade do |t|
     t.integer "hiker_id"
@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 2018_09_05_153250) do
   end
 
   create_table "hikers", force: :cascade do |t|
-    t.string "name"
+    t.string "username"
     t.string "hometown"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "trails", force: :cascade do |t|
