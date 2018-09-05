@@ -26,7 +26,7 @@ Step 2: Decide Page Flow/Stub out Flow
 Step 3: Create a route...
   x Welcome Page    application#welcome
     -Link to Log In
-    -Link to Sign Up
+    x -Link to Sign Up
 
   Sign Up Page    hiker#new
     -Form with information
