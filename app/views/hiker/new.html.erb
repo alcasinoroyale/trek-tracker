@@ -1,5 +1,12 @@
 <h1>Hiker Sign Up</h1>
-<%= form_with model: [@hiker] do |f| %>
-  
+<%= form_for @hiker do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %> <br>
+  <%= f.label :hometown, :value => "Hometown Zipcode" %>
+  <%= f.number_field :hometown %> <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %> <br>
+
+  <%= f.submit "Create Hiker" %>
 
 <% end %>

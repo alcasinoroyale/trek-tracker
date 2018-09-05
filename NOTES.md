@@ -28,15 +28,25 @@ Step 3: Create a route...
     -Link to Log In
     x -Link to Sign Up
 
-  Sign Up Page    hiker#new
-    -Form with information
-
 Step 4: Update Hiker to change :name to :username and add :password_digest
-  [ ] add has_secure_password to Hiker model
-  [ ] does gemfile include bcrypt?
+  [x] add has_secure_password to Hiker model
+  [x] does gemfile include bcrypt?
+
+Step 5:
+  Sign Up Page    hiker#new
+    [x] Form with information... username, password, hometown ZIP
+    __ (Later: Confirm that zipcode exists -- validation !!! )
+    __ (Later: Do I need a password_confirmation? --> Not yet)
+
+    *ISSUE* Drawing a route to '/signup' instead of '/hikers/new'  I explicitly drew the route instead of using a hiker as a resource.  I need to get the route prefixes to work (hiker_path, new_hiker_path)  If I use a resource, how can I make the route go to /signup?  If I do not use a resource, how can I get the route prefixes to work?
+    
+  Sign Up Page    hiker#Create
+    [ ] Successfully create a Hiker
 
 Step 6: Log In and Log Out (Authentication) * Later
   [ ] generate Sessions Controller
   [ ] sessions#new -> Log In
   [ ] sessions#create -> Authenticate
+
+Step ___ :
   [ ] OAuth through what strategy ???
