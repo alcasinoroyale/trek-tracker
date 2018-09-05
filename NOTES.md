@@ -24,7 +24,7 @@ Step 2: Decide Page Flow/Stub out Flow
 
 
 Step 3: Create a route...
-  Welcome Page    application#welcome
+  x Welcome Page    application#welcome
     -Link to Log In
     -Link to Sign Up
 
