@@ -39,14 +39,34 @@ Step 5:
     __ (Later: Do I need a password_confirmation? --> Not yet)
 
     *ISSUE* Drawing a route to '/signup' instead of '/hikers/new'  I explicitly drew the route instead of using a hiker as a resource.  I need to get the route prefixes to work (hiker_path, new_hiker_path)  If I use a resource, how can I make the route go to /signup?  If I do not use a resource, how can I get the route prefixes to work?
-    
+    *Answer* I am utilizing resources for now. I will later try to edit the URL to '/signup' instead of '/hikers/new'
+
   Sign Up Page    hiker#Create
-    [ ] Successfully create a Hiker
+    [x] Successfully create a Hiker - preliminary
 
 Step 6: Log In and Log Out (Authentication) * Later
-  [ ] generate Sessions Controller
+  [ ] generate SessionsController
   [ ] sessions#new -> Log In
   [ ] sessions#create -> Authenticate
+  [ ] Authorization logic
+      - What can a user see if not logged in?
+        - The Welcome Page, Sign Up Page, or Log In Page
+      - What can a user see if logged in?
+        - Their Show Page
+        - Aspiration CRUD (It's personal!)
+        - TBD: Trail CRUD pages (Should I have a pre-made list, or allow users to CRUD?)
 
-Step ___ :
+Step 7: OAUTH
   [ ] OAuth through what strategy ???
+
+
+Step 8: MODEL VALIDATIONS
+  [ ] What validations would you like for each model?
+      HIKER: Must have: Username/Password, Username must be unique
+      TRAIL: Must have: Name, Location, Unique Name (?)
+      ASPIRATION: Hiker and Trail must exist (?!)  If User wants to add a trail ... ?
+
+STEP 8.5: Re-Do User Sign Up with new validations
+
+Step 9: NESTED RESOURCE
+  [ ] Add Aspiration nested under Hiker resource '/hikers/1/aspirations/new'
