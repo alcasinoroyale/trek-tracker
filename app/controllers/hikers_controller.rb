@@ -4,13 +4,18 @@ class HikersController < ApplicationController
   end
 
   def create
-    raise hiker_params.inspect
     @hiker = Hiker.new(hiker_params)
+
     if @hiker.save
-      # hiker show page
+      redirect_to hiker_path(@hiker)
     else
+      #show errors
       redirect_to new_hiker_path
     end
+  end
+
+  def show
+    @hiker = Hiker.find_by(id: params[:id])
   end
 
   private
