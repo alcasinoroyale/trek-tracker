@@ -1,4 +1,4 @@
-class HikerController < ApplicationController
+class HikersController < ApplicationController
   def new
     @hiker = Hiker.new
   end
