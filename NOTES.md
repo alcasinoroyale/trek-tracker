@@ -82,8 +82,19 @@ Step 8: MODEL VALIDATIONS
 
 STEP 8.5: Re-Do User Sign Up with new validations
 
+STEP ___ :
+  [ ] Utilize "field-with-errors" on Log In and Sign Up pages.
+
 Step 9: NESTED RESOURCE
   [ ] Add Aspiration nested under Hiker resource '/hikers/1/aspirations/new'
 
 
-  Editing notes
+Step 10: SCOPE METHODS
+  [ ] Write one of the following scope methods:
+      HIKER: #trails_completed (number of aspirations with "completed => true")
+      TRAIL: #hikers_completed (number of hikers that completed)
+             #hikers_aspiring (number of hikers with this trail_id in aspirations list)
+
+
+
+STEP 100: Open up the screen shot from Luisa about what you might be asked during the assessment.  Look up MVC useage and request / response patterns

@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     @hiker = Hiker.find_by(username: params[:username]).try(:authenticate, params[:password])
     if !!@hiker
       session[:hiker_id] = @hiker.id
+      binding.pry
       redirect_to hiker_path(@hiker)
     else
       redirect_to login_path
