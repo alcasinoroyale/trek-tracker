@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :hikers, only: [:new, :create, :show]
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy', as: 'logout'
   # get '/signup', to: 'hiker#new', as: 'new_hiker'
   # post '/signup', to: 'hiker#create'
 end
