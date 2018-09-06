@@ -21,4 +21,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_user
+    if logged_in?
+      @current_user = Hiker.find_by(id: session[:hiker_id])
+    end
+  end
+
 end
