@@ -9,6 +9,7 @@ class HikersController < ApplicationController
     @hiker = Hiker.new(hiker_params)
 
     if @hiker.save
+      session[:hiker_id] = @hiker.id
       redirect_to hiker_path(@hiker)
     else
       #show errors
