@@ -48,7 +48,7 @@ Step 5:
 
 Step 6: Log In and Log Out (Authentication) * Later
   [x] generate SessionsController
-  [ ] draw sessions routes
+  [x] draw sessions routes
        GET '/login' to sessions#new as
        POST '/login' to sessions#create
   [ ] sessions#new -> Log In

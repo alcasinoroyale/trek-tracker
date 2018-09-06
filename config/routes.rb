@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'application#welcome'
 
   resources :hikers, only: [:new, :create, :show]
-
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/login', to: 'sessions#create'
   # get '/signup', to: 'hiker#new', as: 'new_hiker'
   # post '/signup', to: 'hiker#create'
 end
