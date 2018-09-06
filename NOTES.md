@@ -51,6 +51,7 @@ Step 6: Log In and Log Out (Authentication) * Later
   [x] draw sessions routes
        GET '/login' to sessions#new as
        POST '/login' to sessions#create
+  [ ] Make a view for the log in page
   [ ] sessions#new -> Log In
       logic to instantiate a session
       re-read authentication or re watch TODO MVC authenticate lectures
