@@ -1,12 +1,12 @@
-<div>
-
-  <h1>Log In</h1>
-  <%= form_tag login_path do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %> <br>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %> <br>
-    <%= submit_tag "Log In" %>
-  <% end %>
-
-</div>
+<h1>Log In</h1>
+<%= "#{flash[:message]}" if flash[:message].present? %>
+<br>
+<%= form_tag login_path do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %> <br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %> <br>
+  <%= submit_tag "Log In" %>
+<% end %>
+<br>
+<a href="/hikers/new">Sign Up</a>

@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       session[:hiker_id] = @hiker.id
       redirect_to hiker_path(@hiker)
     else
-      redirect_to login_path
+      flash[:message] = "Enter correct username and password, or sign up"
+      render 'sessions/new'
     end
   end
 
