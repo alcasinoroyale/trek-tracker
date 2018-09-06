@@ -20,6 +20,9 @@ class HikersController < ApplicationController
   #Profile Page
   def show
     @hiker = Hiker.find_by(id: params[:id])
+    if @hiker.id != current_user.id
+      redirect_to root_path
+    end
   end
 
   private
