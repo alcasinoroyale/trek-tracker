@@ -13,7 +13,7 @@ class HikersController < ApplicationController
       redirect_to hiker_path(@hiker)
     else
       #show errors
-      redirect_to new_hiker_path
+      render 'hikers/new'
     end
   end
 
