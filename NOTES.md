@@ -44,8 +44,6 @@ Step 5:
   Sign Up Page    hiker#Create
     [x] Successfully create a Hiker - preliminary
 
-**PICK UP HERE**
-
 Step 6: Log In and Log Out (Authentication) * Later
   [x] generate SessionsController
   [x] draw sessions routes
@@ -55,13 +53,14 @@ Step 6: Log In and Log Out (Authentication) * Later
   [/] sessions#new -> Log In
       logic to instantiate a session
       re-read authentication or re watch TODO MVC authenticate lectures
-  [ ] sessions#create -> Authenticate
+  [x] sessions#create -> Authenticate
   ___ Later: sessions#destroy -> Log Out! What route would this be? A GET and then a PATCH? To destroy the current session?
 
 
-  [ ] Authorization logic
+  [ ] Authorization logic before_action with a helper method established
+      [ ] #logged_in?  "if a session[:hiker_id] exists, the user can see the page"
       - What can a user see if not logged in?
-        - The Welcome Page, Sign Up Page, or Log In Page
+        - The Welcome Page (App#welcome controller), Sign Up Page (Hiker#new Controller), or Log In Page (Sessions Controller)
       - What can a user see if logged in?
         - Their Show Page
         - Aspiration CRUD (It's personal!)
@@ -69,6 +68,7 @@ Step 6: Log In and Log Out (Authentication) * Later
 
 Step 7: OAUTH
   [ ] OAuth through what strategy ???
+      - Try Google
 
 
 Step 8: MODEL VALIDATIONS
@@ -76,6 +76,9 @@ Step 8: MODEL VALIDATIONS
       HIKER: Must have: Username/Password, Username must be unique
       TRAIL: Must have: Name, Location, Unique Name (?)
       ASPIRATION: Hiker and Trail must exist (?!)  If User wants to add a trail ... ?
+  ___ Later?:
+              - All usernames should be saved as downcase.
+              - Usernames should NOT be case sensitive.
 
 STEP 8.5: Re-Do User Sign Up with new validations
 

@@ -4,10 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @hiker = Hiker.find_by(username: params[:username])
-    if !!@hiker.authenticate(params[:password])
+    @hiker = Hiker.find_by(username: params[:username]).try(:authenticate, params[:password])
+    if !!@hiker
       session[:hiker_id] = @hiker.id
-      raise @hiker.inspect
       redirect_to hiker_path(@hiker)
     else
       redirect_to login_path
