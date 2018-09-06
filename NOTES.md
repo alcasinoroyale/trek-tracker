@@ -44,10 +44,20 @@ Step 5:
   Sign Up Page    hiker#Create
     [x] Successfully create a Hiker - preliminary
 
+**PICK UP HERE**
+
 Step 6: Log In and Log Out (Authentication) * Later
-  [ ] generate SessionsController
+  [x] generate SessionsController
+  [ ] draw sessions routes
+       GET '/login' to sessions#new as
+       POST '/login' to sessions#create
   [ ] sessions#new -> Log In
+      logic to instantiate a session
+      re-read authentication or re watch TODO MVC authenticate lectures
   [ ] sessions#create -> Authenticate
+  ___ Later: sessions#destroy -> Log Out! What route would this be? A GET and then a PATCH? To destroy the current session?
+
+
   [ ] Authorization logic
       - What can a user see if not logged in?
         - The Welcome Page, Sign Up Page, or Log In Page
