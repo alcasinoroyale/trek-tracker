@@ -1,4 +1,5 @@
 class HikersController < ApplicationController
+  #Sign Up Page
   def new
     @hiker = Hiker.new
   end
@@ -14,6 +15,7 @@ class HikersController < ApplicationController
     end
   end
 
+  #Profile Page
   def show
     @hiker = Hiker.find_by(id: params[:id])
   end
