@@ -84,3 +84,6 @@ STEP 8.5: Re-Do User Sign Up with new validations
 
 Step 9: NESTED RESOURCE
   [ ] Add Aspiration nested under Hiker resource '/hikers/1/aspirations/new'
+
+
+  Editing notes
