@@ -1,4 +1,15 @@
 <h1>Hiker Sign Up</h1>
+
+<% if @hiker.errors.any? %>
+  <ul>
+    <% @hiker.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
+
 <%= form_for @hiker do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %> <br>

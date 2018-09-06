@@ -12,7 +12,6 @@ class HikersController < ApplicationController
       session[:hiker_id] = @hiker.id
       redirect_to hiker_path(@hiker)
     else
-      #show errors
       render 'hikers/new'
     end
   end
