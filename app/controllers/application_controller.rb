@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :require_login
   skip_before_action :require_login, only: [:welcome]
+  helper_method :current_user
 
 
 
@@ -22,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= Hiker.find(session[:hiker_id]) if session[:hiker_id]
+    @current_user ||= Hiker.find_by(id: session[:hiker_id]) if session[:hiker_id]
   end
 
 end
