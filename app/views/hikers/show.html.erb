@@ -1,2 +1,5 @@
 <h1>Welcome, <%= @hiker.username %></h1>
-<h2>Trails You Want to Hike:</h2>
+<h3>Your hometown is:</h3>
+<h3>You have hiked ___ trails.</h3>
+<br>
+<p>See the <a href="<%= hiker_aspirations_path(@hiker) %>">list of trails</a> you'd like to hike</p>
