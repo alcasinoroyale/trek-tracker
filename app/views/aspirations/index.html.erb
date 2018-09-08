@@ -1,1 +1,9 @@
 <h2>Trails You Want to Hike:</h2>
+<ul>
+  <% @aspirations.each do |a| %>
+    <li><%= a.name %> - Incomplete</li>
+  <% end %>
+</ul>
+<br>
+<p>Where else would you like to go?</p>
+<p>Add an aspiration <a href="<%= new_hiker_aspiration_path(params[:hiker_id]) %>">here</a></p>
