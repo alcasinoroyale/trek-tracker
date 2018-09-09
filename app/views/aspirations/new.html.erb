@@ -1,2 +1,7 @@
 <!-- Get your current user method to work here -->
 <h2>Where would you like to go, <%= current_user.username %> ?</h2>
+<%= form_for(@aspiration, :url => url_for(:controller => 'aspirations', :action => 'create')) do |f| %>
+  <%= f.label :trail_id, "Choose an existing trail:" %>
+  <%= f.collection_select(:trail_id, Trail.all, :id, :name) %>
+  <%= f.submit "I want to go!" %>
+<% end %>
