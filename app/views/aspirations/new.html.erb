@@ -3,5 +3,6 @@
 <%= form_for(@aspiration, :url => url_for(:controller => 'aspirations', :action => 'create')) do |f| %>
   <%= f.label :trail_id, "Choose an existing trail:" %>
   <%= f.collection_select(:trail_id, Trail.all, :id, :name) %>
+  <%= f.hidden_field :hiker_id, :value=> current_user.id %>
   <%= f.submit "I want to go!" %>
 <% end %>
