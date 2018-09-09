@@ -15,7 +15,10 @@ class AspirationsController < ApplicationController
     if @aspiration.save
       redirect_to hiker_aspirations_path(current_user)
     else
-      render new_hiker_aspiration_path
+      # FIXME: When this renders, it renders the new page
+      # but the URL is the hiker_aspirations index path
+
+      render 'aspirations/new'
     end
   end
 

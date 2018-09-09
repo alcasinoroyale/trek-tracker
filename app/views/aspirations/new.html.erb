@@ -1,4 +1,12 @@
-<!-- Get your current user method to work here -->
+<% if @aspiration.errors.any? %>
+  <ul>
+    <% @aspiration.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <br>
+<% end %>
+
 <h2>Where would you like to go, <%= current_user.username %> ?</h2>
 <%= form_for(@aspiration, :url => url_for(:controller => 'aspirations', :action => 'create')) do |f| %>
   <%= f.label :trail_id, "Choose an existing trail:" %>
