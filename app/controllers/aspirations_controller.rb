@@ -11,8 +11,12 @@ class AspirationsController < ApplicationController
 
   def create
     # logic to add a trail to this hiker's aspirations
-    @aspiration = Aspiration.create(aspiration_params)
-    redirect_to hiker_aspirations_path(current_user)
+    @aspiration = Aspiration.new(aspiration_params)
+    if @aspiration.save
+      redirect_to hiker_aspirations_path(current_user)
+    else
+      render new_hiker_aspiration_path
+    end
   end
 
   private
