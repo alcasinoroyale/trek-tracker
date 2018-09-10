@@ -8,6 +8,11 @@ class AspirationsController < ApplicationController
   end
 
   def create
+    raise params.inspect
+    # This controller must handle a new aspiration for an
+    # existing trail selected, OR a new trail the user creates.
+    # The New Trail will post to #create, handled by Aspirations
+
     @aspiration = Aspiration.new(aspiration_params)
     if @aspiration.save
       redirect_to hiker_aspirations_path(current_user)

@@ -8,9 +8,24 @@
 <% end %>
 
 <h2>Where would you like to go, <%= current_user.username %> ?</h2>
+    <!-- Thought: The explicit url to controller action is
+    probably what's messing up the render call in the
+    controller when validation fails -->
 <%= form_for(@aspiration, :url => url_for(:controller => 'aspirations', :action => 'create')) do |f| %>
-  <%= f.label :trail_id, "Choose an existing trail:" %>
-  <%= f.collection_select(:trail_id, Trail.all, :id, :name) %>
   <%= f.hidden_field :hiker_id, :value=> current_user.id %>
+  <%= f.label :trail_id, "Choose an existing trail:" %>
+  <%= f.collection_select(:trail_id, Trail.all, :id, :name, prompt: true) %> <br><br>
+
+  <%= f.label :trail_attributes, "Or, create a new trail:" %> <br>
+  <%= f.fields_for :trail, current_user.trails.build do |trails_fields| %>
+    <%= trails_fields.label :name %>
+    <%= trails_fields.text_field :name %> <br>
+    <%= trails_fields.label :location %>
+    <%= trails_fields.text_field :location %>
+  <% end %>
   <%= f.submit "I want to go!" %>
 <% end %>
+
+<!-- 1. an aspiration class has to accept nested attributes for a trail
+2. the form has to have an object. @aspiration (new instance) doesn't have access to .trail.build
+    maybe I could do current_user.trails.build for the nested trail attributes -->
