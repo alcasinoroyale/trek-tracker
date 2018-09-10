@@ -8,16 +8,13 @@ class AspirationsController < ApplicationController
   end
 
   def create
-    raise params.inspect
-    # This controller must handle a new aspiration for an
-    # existing trail selected, OR a new trail the user creates.
-    # The New Trail will post to #create, handled by Aspirations
 
     @aspiration = Aspiration.new(aspiration_params)
     if @aspiration.save
       redirect_to hiker_aspirations_path(current_user)
     else
-      # FIXME: the URL is the hiker_aspirations index path
+      # FIXME: do you need to explicitly define the url
+      # and controller action in the form for in the view?
       render 'aspirations/new'
     end
   end
@@ -25,6 +22,6 @@ class AspirationsController < ApplicationController
   private
 
   def aspiration_params
-    params.require(:aspiration).permit(:hiker_id, :trail_id)
+    params.require(:aspiration).permit(:hiker_id, :trail_id, trail_attributes: [:name, :location])
   end
 end
