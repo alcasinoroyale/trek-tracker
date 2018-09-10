@@ -8,15 +8,15 @@ class AspirationsController < ApplicationController
   end
 
   def create
-
     @aspiration = Aspiration.new(aspiration_params)
+
     if @aspiration.save
       redirect_to hiker_aspirations_path(current_user)
     else
-      # FIXME: do you need to explicitly define the url
-      # and controller action in the form for in the view?
       render 'aspirations/new'
     end
+
+
   end
 
   private

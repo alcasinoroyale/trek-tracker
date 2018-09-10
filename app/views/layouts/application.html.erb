@@ -14,7 +14,8 @@
   </body>
 
   <footer>
-    <p>Logged In As: <%= current_user.username %></p>
+      <p>Logged In As: <%= current_user.username if current_user %></p>
+
     <p>Click <a href="/logout">Here</a> to Log Out</p>
   </footer>
 </html>

@@ -1,7 +1,7 @@
 class Aspiration < ApplicationRecord
   belongs_to :trail
   belongs_to :hiker
-  accepts_nested_attributes_for :trail
+  accepts_nested_attributes_for :trail, reject_if: :reject_trails
 
   validate :unique_trail
 
@@ -12,9 +12,15 @@ class Aspiration < ApplicationRecord
     end
   end
 
+  def reject_trails(attributes)
+    attributes[:name].blank? || attributes[:location].blank?
+  end
+
   def trail_attributes=(trail_attributes)
-    trail = Trail.find_or_create_by(trail_attributes)
-    self.trail = trail
+    unless reject_trails(trail_attributes)
+      trail = Trail.find_or_create_by(trail_attributes)
+      self.trail = trail
+    end
   end
 end
 
