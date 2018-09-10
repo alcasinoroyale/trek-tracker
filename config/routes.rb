@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'application#welcome'
 
   resources :hikers, only: [:new, :create, :show] do
-    resources :aspirations, only: [:index, :new, :create]
+    resources :aspirations, only: [:index, :new, :create, :update]
   end
 
   get '/login', to: 'sessions#new', as: 'login'

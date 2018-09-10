@@ -1,6 +1,6 @@
 class AspirationsController < ApplicationController
   def index
-    @aspirations = Hiker.find_by(id: params[:hiker_id]).trails
+    @aspirations = current_user.trails
   end
 
   def new
@@ -15,8 +15,11 @@ class AspirationsController < ApplicationController
     else
       render 'aspirations/new'
     end
+  end
 
-
+  def update
+    #update completed status
+    #redirect to index
   end
 
   private
