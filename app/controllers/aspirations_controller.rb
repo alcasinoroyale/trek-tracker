@@ -1,6 +1,6 @@
 class AspirationsController < ApplicationController
   def index
-    @aspirations = current_user.trails
+    @aspirations = current_user.aspirations
   end
 
   def new

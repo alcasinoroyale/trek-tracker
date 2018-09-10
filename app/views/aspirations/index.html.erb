@@ -1,7 +1,7 @@
 <h2>Trails You Want to Hike:</h2>
 <ul>
   <% @aspirations.each do |a| %>
-    <li><%= a.name %> - Incomplete</li>
+    <li><%= a.trail.name %> - <%= a.completed_status %></li>
   <% end %>
 </ul>
 <br>

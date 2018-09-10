@@ -5,6 +5,14 @@ class Aspiration < ApplicationRecord
 
   validate :unique_trail
 
+  def completed_status
+    if completed
+      "Complete"
+    else
+      "Incomplete"
+    end
+  end
+
   def unique_trail
     hiker = Hiker.find_by(id: hiker_id)
     if hiker.trails.where(id: trail_id).present?
