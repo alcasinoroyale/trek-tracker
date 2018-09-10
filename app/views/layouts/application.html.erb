@@ -14,7 +14,7 @@
   </body>
 
   <footer>
-    <p>Logged In As: <%= session[:hiker_id] %></p>
+    <p>Logged In As: <%= current_user.username %></p>
     <p>Click <a href="/logout">Here</a> to Log Out</p>
   </footer>
 </html>
