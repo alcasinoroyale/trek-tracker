@@ -1,9 +1,23 @@
 <h2>Trails You Want to Hike:</h2>
-<ul>
-  <% @aspirations.each do |a| %>
-    <li><%= a.trail.name %> - <%= a.completed_status %></li>
-  <% end %>
-</ul>
+<br>
+<table cellpadding=3>
+  <thead>
+    <tr>
+      <th>Trail Name</th>
+      <th>Status</th>
+      <th>Update!</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @aspirations.each do |a| %>
+      <tr>
+        <th><%= a.trail.name %></th>
+        <th><%= a.completed_status %></th>
+        <th>Click to Update</th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <br>
 <p>Where else would you like to go?</p>
 <p>Add an aspiration <a href="<%= new_hiker_aspiration_path(current_user.id) %>">here</a></p>
