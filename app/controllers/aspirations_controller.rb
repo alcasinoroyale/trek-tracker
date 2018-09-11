@@ -22,10 +22,6 @@ class AspirationsController < ApplicationController
     @aspiration.change_status
     @aspiration.save
     redirect_to hiker_aspirations_path(current_user)
-
-    # What params will I need to update the aspiration's status?
-    # aspiration's ID. then I will need to find_by id
-    # then I will call an aspiration method to change_status
   end
 
   private
