@@ -14,11 +14,13 @@
         <th><%= a.trail.name %></th>
         <th><%= a.completed_status %></th>
         <th>
-
-          <!-- <%#= #form_tag(hiker_aspiration_path(current_user.id), :method => "put") do %>
-            <%#= #f.submit_tag "Update Status" %>
-          <%# end %> -->
-          
+          <!-- <form action= "<%= hiker_aspiration_path(current_user.id, a.id) %>" method="post">
+            <input name="_method" type="hidden" value="put" />
+            <input type="submit" value="Update Status">
+          </form> -->
+          <%= form_tag(hiker_aspiration_path(current_user.id, a.id), :method => "put") do %>
+            <%= submit_tag "Update Status" %>
+          <% end %>
         </th>
       </tr>
     <% end %>

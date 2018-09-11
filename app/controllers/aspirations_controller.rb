@@ -18,7 +18,11 @@ class AspirationsController < ApplicationController
   end
 
   def update
-    raise params.inspect
+    @aspiration = Aspiration.find_by(id: params[:id])
+    @aspiration.change_status
+    @aspiration.save
+    redirect_to hiker_aspirations_path(current_user)
+
     # What params will I need to update the aspiration's status?
     # aspiration's ID. then I will need to find_by id
     # then I will call an aspiration method to change_status
