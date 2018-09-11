@@ -13,7 +13,13 @@
       <tr>
         <th><%= a.trail.name %></th>
         <th><%= a.completed_status %></th>
-        <th>Click to Update</th>
+        <th>
+
+          <!-- <%#= #form_tag(hiker_aspiration_path(current_user.id), :method => "put") do %>
+            <%#= #f.submit_tag "Update Status" %>
+          <%# end %> -->
+          
+        </th>
       </tr>
     <% end %>
   </tbody>

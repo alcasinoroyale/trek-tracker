@@ -13,6 +13,11 @@ class Aspiration < ApplicationRecord
     end
   end
 
+  # def change_status
+  #   update(completed: !self.completed)
+  #   save
+  # end
+
   def unique_trail
     hiker = Hiker.find_by(id: hiker_id)
     if hiker.trails.where(id: trail_id).present?

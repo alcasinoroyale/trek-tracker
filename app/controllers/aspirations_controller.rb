@@ -18,8 +18,10 @@ class AspirationsController < ApplicationController
   end
 
   def update
-    #update completed status
-    #redirect to index
+    raise params.inspect
+    # What params will I need to update the aspiration's status?
+    # aspiration's ID. then I will need to find_by id
+    # then I will call an aspiration method to change_status
   end
 
   private
