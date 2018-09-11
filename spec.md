@@ -10,7 +10,7 @@ Specs:
 - [x] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
 
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
-    - [ ] Form for user to submit this attribute
+    - [x] Form for user to submit this attribute
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 
@@ -26,12 +26,12 @@ Specs:
 
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
 
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
     (x) Log In and Sign Up Errors
     (x) Adding existing trail to aspirations error
-    ( ) Aspiration errors (New trail invalid errors)
+    (x) Aspiration errors (New trail invalid errors)
 
 Confirm:
 - [ ] The application is pretty DRY
