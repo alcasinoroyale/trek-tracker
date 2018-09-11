@@ -3,7 +3,7 @@ class Aspiration < ApplicationRecord
   belongs_to :hiker
   accepts_nested_attributes_for :trail, reject_if: :reject_trails
 
-  validate :unique_trail
+  validate :unique_trail, :on => :create
 
   def completed_status
     if completed
@@ -13,10 +13,10 @@ class Aspiration < ApplicationRecord
     end
   end
 
-  # def change_status
-  #   update(completed: !self.completed)
-  #   save
-  # end
+  def change_status
+    update(completed: !self.completed)
+    save
+  end
 
   def unique_trail
     hiker = Hiker.find_by(id: hiker_id)
