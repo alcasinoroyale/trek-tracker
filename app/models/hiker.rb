@@ -15,4 +15,5 @@ class Hiker < ApplicationRecord
       length.to_s + " trail"
     end
   end
+  
 end
