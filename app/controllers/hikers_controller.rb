@@ -24,6 +24,10 @@ class HikersController < ApplicationController
     end
   end
 
+  def leaderboard
+    
+  end
+
   private
 
   def hiker_params
