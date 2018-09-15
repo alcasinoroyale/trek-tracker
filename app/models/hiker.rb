@@ -7,6 +7,8 @@ class Hiker < ApplicationRecord
   validates :username, :password_digest, presence: true
   validates :username, uniqueness: true
 
+  scope :hiker_leaderboard, -> { joins(:aspirations).where('aspirations.completed' => "true").group(:username).count.sort_by {|k, v| v}.reverse.to_h }
+
   def self.find_or_create_by_omniauth(auth_hash)
     where(:username => auth_hash.info.first_name).first_or_create do |user|
       user.password = SecureRandom.hex

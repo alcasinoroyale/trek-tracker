@@ -25,7 +25,7 @@ class HikersController < ApplicationController
   end
 
   def leaderboard
-    @leaderboard = Aspiration.hiker_leaderboard
+    @leaderboard = Hiker.hiker_leaderboard
   end
 
   private
