@@ -5,6 +5,8 @@ class Aspiration < ApplicationRecord
 
   validate :unique_trail, :on => :create
 
+  scope :hiker_leaderboard, -> { joins(:hiker).where(:completed => "true").group(:username).count.sort_by {|k, v| v}.reverse.to_h }
+
   def completed_status
     if completed
       "Complete"
