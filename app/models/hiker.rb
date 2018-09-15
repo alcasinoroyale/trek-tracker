@@ -8,11 +8,8 @@ class Hiker < ApplicationRecord
   validates :username, uniqueness: true
 
   def self.find_or_create_by_omniauth(auth_hash)
-    oauth_name = auth_hash.info.first_name
-    if hiker = Hiker.find_by(username: oauth_name)
-      return hiker
-    else
-      hiker = Hiker.create(username: oauth_name, password: SecureRandom.hex)
+    where(:username => auth_hash.info.first_name).first_or_create do |user|
+      user.password = SecureRandom.hex
     end
   end
 
