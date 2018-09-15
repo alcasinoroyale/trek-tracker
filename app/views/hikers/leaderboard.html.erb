@@ -1,6 +1,18 @@
 <h1>Leaderboard</h1>
-<ul>
-  <% @leaderboard.each do |k, v| %>
-    <li><%= k %> - <%= v %></li>
-  <% end %>
-</ul>
+
+<table cellpadding=3>
+  <thead>
+    <tr>
+      <th>Hiker</th>
+      <th>Trails Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @leaderboard.each do |k, v| %>
+      <tr>
+        <th><%= k %></th>
+        <th><%= v %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
