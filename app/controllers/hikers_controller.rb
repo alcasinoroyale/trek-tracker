@@ -1,5 +1,5 @@
 class HikersController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create, :leaderboard]
 
   def new
     @hiker = Hiker.new
