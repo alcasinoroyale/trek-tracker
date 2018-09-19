@@ -16,7 +16,7 @@
   <footer>
     <% if logged_in? %>
 
-      <p>Click <a href="/logout">Here</a> to Log Out</p>
+      <p><%= link_to "Profile", hiker_path(current_user) %> | <%= link_to "Log Out", logout_path %></p>
 
     <% end %>
 
