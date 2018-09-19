@@ -14,20 +14,13 @@
   </body>
 
   <footer>
-
     <% if logged_in? %>
-
-      <p>Logged In As: <%= current_user.username if current_user %></p>
 
       <p>Click <a href="/logout">Here</a> to Log Out</p>
 
-    <% else %>
-
-      <p>You Are Not Logged In.</p>
-
     <% end %>
 
-
+      <p><%= link_to "Trek Tracker", root_path %> | 2018</p>
 
   </footer>
 </html>
