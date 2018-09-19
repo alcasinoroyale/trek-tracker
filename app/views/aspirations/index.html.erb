@@ -6,6 +6,7 @@
       <th>Trail Name</th>
       <th>Status</th>
       <th>Update!</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,11 @@
         <th>
           <%= form_tag(hiker_aspiration_path(current_user.id, a.id), :method => "put") do %>
             <%= submit_tag "Update Status" %>
+          <% end %>
+        </th>
+        <th>
+          <%= form_tag(hiker_aspiration_path(current_user.id, a.id), :method => "delete") do %>
+            <%= submit_tag "X" %>
           <% end %>
         </th>
       </tr>

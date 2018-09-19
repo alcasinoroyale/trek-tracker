@@ -24,6 +24,13 @@ class AspirationsController < ApplicationController
     redirect_to hiker_aspirations_path(current_user)
   end
 
+  def destroy
+    @aspiration = Aspiration.find_by(id: params[:id])
+    @aspiration.destroy
+    @aspiration.save
+    redirect_to hiker_aspirations_path(current_user)
+  end
+
   private
 
   def aspiration_params
