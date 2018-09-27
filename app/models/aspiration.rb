@@ -3,7 +3,7 @@ class Aspiration < ApplicationRecord
   belongs_to :hiker
   accepts_nested_attributes_for :trail, reject_if: :reject_trails
 
-  scope :completed_aspirations, -> { joins(:hiker).where(:completed => "true").group(:username) }
+  scope :completed_aspirations, -> { joins(:hiker).where(:completed => "true") }
 
   validate :unique_trail, :on => :create
 

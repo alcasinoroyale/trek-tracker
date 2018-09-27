@@ -1,4 +1,6 @@
 <h1>Aspirations Completed</h1>
+<p><em>A list of all of the trail completions thus far...</em></p>
+<br>
 <% @completed.each do |a| %>
-  <p></p>
+  <p><%= a.hiker.username %> - <%= a.trail.name %> - <%= a.completed_status %></p>
 <% end %>
