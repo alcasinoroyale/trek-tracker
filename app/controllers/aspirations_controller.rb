@@ -31,6 +31,11 @@ class AspirationsController < ApplicationController
     redirect_to hiker_aspirations_path(current_user)
   end
 
+  def completed
+    # show AR relationship / scope method in view
+    @completed = Aspiration.completed_aspirations
+  end
+
   private
 
   def aspiration_params
