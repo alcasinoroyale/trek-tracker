@@ -7,7 +7,7 @@ Specs:
 
 - [x] Include at least one belongs_to relationship (x belongs_to y e.g. Post belongs_to User)
 
-* [x] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
+- [x] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
 
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
     - [x] Form for user to submit this attribute
@@ -24,7 +24,7 @@ Specs:
 
 - [x] Include logout (how e.g. Devise)
 
-* [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 
@@ -36,7 +36,7 @@ Specs:
     (x) Aspiration errors (New trail invalid errors)
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate
