@@ -28,3 +28,7 @@ I created Trek Tracker to be an outdoorsy to-do list. I wanted to make an applic
   * Adding validations to the Hiker's `:hometown` and the Trail's `:location` attributes (i.e. Is this a US city, does this zipcode exist, can this be found on a map)
   * Calculating the distance between the Hiker and the Trail that they aspire to hike to
   * Embed maps to the Hiker's profile that show pins color coded to show the trails that they would like to hike, and which they have completed already.
+  
+## License
+The app is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
